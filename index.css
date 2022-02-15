@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f7f7f7;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.box {
+  position: relative;
+  width: 400px;
+  height: 100px;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.025);
+}
+
+.box:nth-child(1) {
+  transform: translate(-70px);
+}
+
+.box:nth-child(3) {
+  transform: translate(70px);
+}
+
+.container:hover .box:nth-child(1) {
+  transform: translate(0);
+}
+
+.container:hover .box:nth-child(3) {
+  transform: translate(0);
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: var(--clr);
+  transition: 0.5s ease-in-out;
+}
+
+.box:hover::before {
+  width: 100%;
+}
+
+.box__content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.box__icon {
+  position: relative;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box__ion-icon {
+  font-size: 2.5em;
+  color: var(--clr);
+  transition: 0.5s ease-in-out;
+}
+
+.box:hover .box__ion-icon {
+  color: #fff;
+}
+
+.box__title {
+  font-weight: 500;
+  color: var(--clr);
+  transition: 0.5s ease-in-out;
+}
+
+.box__paragraph {
+  font-size: 0.9em;
+  color: #999;
+  transition: 0.5s ease-in-out;
+}
+
+.box:hover .box__title,
+.box:hover .box__paragraph {
+  color: #fff;
+}
